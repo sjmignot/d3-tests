@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>D3 Flask</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<section class="content">
+	  {% block content %}{% endblock %}
+	</section>
+
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+    	<script>
+	{% block script %}{% script %}
+    	</script>
+</body>
+</html>
