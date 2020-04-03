@@ -3,17 +3,11 @@ import pandas as pd
 import json
 
 app = Flask(__name__)
-DATA_PATH = "data/"
+DATA_PATH = "static/data/"
 
-
-@app.route("/posts/<name>/")
+@app.route("/project/<name>/")
 def index(name):
-    df = pd.read_csv(f'{DATA_PATH}{name}.csv')
-    chart_data = df.to_dict(orient='records')
-    chart_data = json.dumps(chart_data, indent=2)
-    data = {'data': chart_data}
-    return render_template("project.html", data=data)
-
+    return render_template("project.html", name=name)
 
 if __name__ == "__main__":
     app.run(debug=True)
